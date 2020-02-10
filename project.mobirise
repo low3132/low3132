@@ -729,7 +729,7 @@
             },
             "@media (max-width: 600px)": {
               ".item-wrapper": {
-                "position": "relative"
+                "position": "absolute"
               },
               ".amp-carousel-button": {
                 "width": "25px",
