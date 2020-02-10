@@ -41,7 +41,22 @@ body{font-family: Poppins;}blockquote{border-color: #db0047;}.display-1{font-fam
   <script async custom-element="amp-animation" src="https://cdn.ampproject.org/v0/amp-animation-0.1.js"></script>
   
   
-
+<meta name="theme-color" content="#db0047">
+<link rel="manifest" href="manifest.json">
+<meta name="amp-script-src" content="sha384-wmk4FRUNR-lbJmTGSVm1k9I9BmtIWhnq_vJffRUNwlmHdjzyJHeuzGT8fv9IXGAj">
+<script async custom-element="amp-install-serviceworker" src="https://cdn.ampproject.org/v0/amp-install-serviceworker-0.1.js"></script>
+<script async custom-element="amp-script" src="https://cdn.ampproject.org/v0/amp-script-0.1.js"></script>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<link rel="apple-touch-startup-image" media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)" href="assets/images/apple-launch-640x1136.png">
+<link rel="apple-touch-startup-image" media="(device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)" href="assets/images/apple-launch-750x1334.png">
+<link rel="apple-touch-startup-image" media="(device-width: 414px) and (device-height: 736px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)" href="assets/images/apple-launch-1242x2208.png">
+<link rel="apple-touch-startup-image" media="(device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)" href="assets/images/apple-launch-1125x2436.png">
+<link rel="apple-touch-startup-image" media="(device-width: 768px) and (device-height: 1024px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)" href="assets/images/apple-launch-1536x2048.png">
+<link rel="apple-touch-startup-image" media="(device-width: 834px) and (device-height: 1112px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)" href="assets/images/apple-launch-1668x2224.png">
+<link rel="apple-touch-startup-image" media="(device-width: 1024px) and (device-height: 1366px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)" href="assets/images/apple-launch-2048x2732.png">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="FOMEC'S Website">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
 </head>
 <body><div id="top-page"></div>                                         <amp-animation id="showScrollToTopAnim" layout="nodisplay">                                             <script type="application/json">                                             {                                                 "duration": "200ms",                                                 "fill": "both",                                                 "iterations": "1",                                                 "direction": "alternate",                                                 "animations": [                                                     {                                                         "selector": "#scrollToTopButton",                                                         "keyframes": [                                                             { "opacity": "0.4", "visibility": "visible" }                                                         ]                                                     }                                                 ]                                             }                                             </script>                                         </amp-animation>                                         <amp-animation id="hideScrollToTopAnim" layout="nodisplay">                                             <script type="application/json">                                             {                                                 "duration": "200ms",                                                 "fill": "both",                                                 "iterations": "1",                                                 "direction": "alternate",                                                 "animations": [                                                     {                                                         "selector": "#scrollToTopButton",                                                         "keyframes": [                                                             { "opacity": "0", "visibility": "hidden" }                                                         ]                                                     }                                                 ]                                             }                                             </script>                                         </amp-animation>                                         <div id="scrollToTopMarker">                                             <amp-position-observer on="enter:hideScrollToTopAnim.start; exit:showScrollToTopAnim.start" layout="nodisplay">                                             </amp-position-observer>                                         </div><amp-sidebar id="sidebar" class="cid-rQ3F125lyN" layout="nodisplay" side="right">
         <div class="builder-sidebar" id="builder-sidebar">
@@ -92,7 +107,12 @@ body{font-family: Poppins;}blockquote{border-color: #db0047;}.display-1{font-fam
             </div>
              
       </div>
-    </amp-sidebar>
+    </amp-sidebar><amp-install-serviceworker src="sw.js" layout="nodisplay"></amp-install-serviceworker>
+<amp-script class="fixed-element" style="z-index:100000000;" src="https://s3.amazonaws.com/r.mobirisesite.com/public-amp-script/ios-pwa-amp-script.js" layout="container">
+<div class="sticker" style="display: block;overflow:auto;margin-bottom: 20px;z-index:1000000;padding: 5px 7px;margin-left: 2%;width: 96%;border-radius: 3px;background-color: #f1f1f1;font-size: 14px;font-family: sans-serif;text-align: center;">
+<span>Install this webapp on your device: tap <span><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" enable-background="new 0 0 50 50" height="15px" id="Layer_1" version="1.1" viewBox="0 0 50 50" width="15px" xml:space="preserve"><polyline fill="none" points="17,10 25,2 33,10   " stroke="#000000" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"></polyline><line fill="none" stroke="#000000" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" x1="25" x2="25" y1="32" y2="2.333"></line><rect fill="none" height="50" width="50"></rect><path d="M17,17H8v32h34V17h-9" fill="none" stroke="#000000" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"></path></svg></span>and then Add to homescreen.</span>
+</div>
+</amp-script>
   <section class="menu horizontal-menu cid-rQ3F125lyN" id="menu1-4v">
 
     
@@ -1084,7 +1104,7 @@ body{font-family: Poppins;}blockquote{border-color: #db0047;}.display-1{font-fam
                         </h3>
                         <p class="mbr-fonts-style align-center mbr-text main-text mbr-semibold align-center display-6">O.E.M Service? Get Our Products?&nbsp;Online Shopping?</p>
                     </div>
-                <form class="mbr-form" method="post" target="_top" action-xhr="https://formoid.net/api/amp-form/push" data-form-title="Mobirise Form"><input type="hidden" name="email" data-form-email="true" value="s2uHeClBvV+F5QeYKZkuJa6DIrcRp8ixQkBVU2zdSr5C+NsAXYVftz8J+Fl7ahwOxbSgqGGkMy8lYzpoafIka/3ZNc52zGQd1Ee81GbeNt746Z+jjnFOhYJPrwIyRkST.7rnSFe+HQqmwO29tPkY4vAkcEc1Sy/Fe7FI/P221bFrPGhoZ3T81KS9CugRGbVdWA5NmiD5ElaxECq06LV1ZNn/OV/chwP/yw1OAd25UBshOyvEZhgft6iX9TV7cdSiB">
+                <form class="mbr-form" method="post" target="_top" action-xhr="https://formoid.net/api/amp-form/push" data-form-title="Mobirise Form"><input type="hidden" name="email" data-form-email="true" value="F+twf/+dn6nlsnJrUcY/CgCNwbbogjh/sh5WIw54CMalJR3arI+B8ZBOGitJsiT0oaM+cofh2h7ZnRL/dlLUPna9ek1vKdTb8SpGbFpDP2iLyTBf/9O2oZ3IdpA6ROyM.EGPQK3RyT+CBrMHnN+RcmJNSn6V0g4YKzZ3vlJLBmu7CuaOmCiEYMIhKXvd+YEn2AULm6NelTlsULlNX/kHlAdVu5bY+BKzx26fyPV+xpeBYLNoOAkKgQ7scQF0uORWm">
                     <div submit-success="">
                         <template data-form-alert="" type="amp-mustache">Message Sent Successfully</template>
                     </div>

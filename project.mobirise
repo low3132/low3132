@@ -76,7 +76,10 @@
     "imageResize": true,
     "canonical-url": false,
     "PWA": {
-      "enabled": false
+      "enabled": true,
+      "name": "FOMEC'S Website",
+      "icon": "@PROJECT_PATH@/assets/images/fomecs-logo-512x512.png",
+      "themeColor": "#db0047"
     },
     "gdpr": false
   },
