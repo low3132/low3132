@@ -71,12 +71,6 @@
     "sitemapSwitcherAuto": "on",
     "siteUrl": false,
     "cookiesAlert": false,
-    "gdpr": {
-      "colorText": "#a7a7a7",
-      "colorLink": "#149dcc",
-      "underlineLink": false,
-      "text": "By continuing you agree to our <a href='terms.html'>Terms of Service</a> and <a href='policy.html'>Privacy Policy</a>."
-    },
     "pwa-switcher": true,
     "robotsText": "User-agent: *\nDisallow: /cgi-bin\n",
     "imageResize": true,
@@ -86,7 +80,8 @@
       "name": "",
       "icon": "@ADDONS_PATH@/pwa-builder/assets/icons/512x512.png",
       "themeColor": "#db0047"
-    }
+    },
+    "gdpr": false
   },
   "pages": {
     "index.html": {
