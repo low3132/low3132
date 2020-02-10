@@ -76,10 +76,7 @@
     "imageResize": true,
     "canonical-url": false,
     "PWA": {
-      "enabled": true,
-      "name": "",
-      "icon": "@ADDONS_PATH@/pwa-builder/assets/icons/512x512.png",
-      "themeColor": "#db0047"
+      "enabled": false
     },
     "gdpr": false
   },
