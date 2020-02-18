@@ -801,6 +801,7 @@
             },
             "@media (max-width: 600px)": {
               ".card-wrapper, .mbr-card-title, .card-img": {
+                "width": "100%",
                 "margin-bottom": "0rem"
               }
             },
