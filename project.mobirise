@@ -803,6 +803,11 @@
               ".card-wrapper, .mbr-card-title, .card-img": {
                 "width": "100%",
                 "margin-bottom": "0rem"
+              },
+              ".mbr-temp": {
+                "object-fit": "fill",
+                "height": "100%",
+                "width": "100%"
               }
             },
             ".content-wrapper, div.mbr-section-btn": {
