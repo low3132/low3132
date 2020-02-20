@@ -801,7 +801,7 @@
             },
             "@media (max-width: 600px)": {
               ".card-wrapper, .mbr-card-title, .card-img": {
-                "margin-bottom": "5rem"
+                "margin-bottom": "5.2rem"
               },
               ".mbr-temp": {
                 "object-fit": "fill"
