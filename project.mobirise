@@ -60,7 +60,7 @@
         "url": "https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i"
       }
     ],
-    "uniqCompNum": 275,
+    "uniqCompNum": 276,
     "versionPublish": "4.12.1",
     "screenshot": "screenshot.png",
     "favicon": false,
@@ -707,72 +707,91 @@
           "_params": {}
         },
         {
-          "_name": "slider1",
+          "alias": false,
           "_styles": {
-            "padding-top": "(@paddingTop * 1rem)",
-            "padding-bottom": "(@paddingBottom * 1rem)",
-            "& when (@overlay)": {
-              ".mbr-overlay": {
-                "background": "@overlayColor",
-                "opacity": "@overlayOpacity",
+            ".mbr-overlay": {
+              "background-color": "@overlayColor",
+              "opacity": "@overlayOpacity",
+              "z-index": "1",
+              "pointer-events": "none"
+            },
+            ".carousel": {
+              "position": "relative",
+              ".container": {
+                "position": "absolute",
+                "top": "50%!important",
+                "-webkit-transform": "translateY(-50%) !important",
+                "transform": "translateY(-50%) !important",
+                "left": "0",
+                "right": "0",
                 "z-index": "1"
               }
             },
-            ".item": {
-              "display": "flex",
-              "cursor": "pointer"
-            },
-            ".item-wrapper": {
-              "height": "100%",
+            "img": {
               "width": "100%",
-              "position": "relative"
+              "max-height": "1200px",
+              "min-height": "900px",
+              "object-fit": "cover!important"
             },
-            "@media (max-width: 600px)": {
-              ".item-wrapper": {
-                "position": "relative"
-              },
-              ".amp-carousel-button": {
-                "width": "25px",
-                "height": "50px",
-                "border-radius": "5%"
+            ".mbr-section-title": {
+              "margin": "3.75rem 0",
+              "@media (max-width: 662px)": {
+                "margin": "0"
               }
             },
-            "amp-img, img": {
-              "height": "100%",
-              "object-fit": "cover"
+            ".mbr-section-subtitle, .mbr-text": {
+              "margin-bottom": "2rem"
             },
-            "amp-img .text-container": {
-              "display": "flex",
-              "flex-direction": "column",
-              "align-items": "center",
-              "justify-content": "center",
-              "pointer-events": "none",
-              "left": "0",
-              "right": "0",
-              "bottom": "0",
-              "top": "0",
-              "z-index": "2",
-              "> *": {
-                "pointer-events": "all"
-              }
+            ".image": {
+              "width": "100%",
+              "max-height": "1200px",
+              "min-height": "900px"
             },
-            ".mbr-text": {
-              "width": "auto"
+            "amp-img": {
+              "width": "100%",
+              "max-height": "1200px",
+              "min-height": "900px"
+            },
+            ".amp-carousel-slide": {
+              "width": "100%",
+              "max-height": "1200px",
+              "min-height": "900px",
+              "object-fit": "cover!important"
+            },
+            "amp-carousel": {
+              "width": "100%",
+              "object-fit": "cover",
+              "height": "100%"
+            },
+            ".slider-box": {
+              "position": "relative",
+              "width": "100%",
+              "max-height": "1200px",
+              "min-height": "900px",
+              "overflow": "hidden",
+              "height": "900px"
             },
             ".amp-carousel-button": {
-              "position": "absolute",
               "width": "50px",
               "height": "100px",
-              "border-radius": "5%"
+              "outline": "none",
+              "background-color": "rgba(0, 0, 0, 0.5)",
+              "&:hover": {
+                "background-color": "rgba(0, 0, 0, 0.3)"
+              }
+            },
+            "@media (max-width: 900px)": {
+              "amp-carousel": {
+                "height": "60rem"
+              }
             }
           },
-          "_customHTML": "<section class=\"amp-lightbox-carousel slider5\" group=\"Shop\" plugins=\"amp-main, amp-carousel, amp-lightbox-gallery\">\n\t<mbr-parameters>\n\t\t<!-- Block parameters controls (Blue \"Gear\" panel) -->\n\t\t<header>Size</header>\n\t\t<input type=\"range\" inline=\"\" title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"10\" step=\"1\" value=\"4\">\n\t\t<input type=\"range\" inline=\"\" title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"10\" step=\"1\" value=\"0\">\n\t\t<header>Show/Hide</header>\n\t\t<input type=\"checkbox\" name=\"showTitle\" title=\"Show Title\">\n\t\t<input type=\"checkbox\" name=\"showText\" title=\"Show Text\">\n\t\t<input type=\"color\" name=\"textBg\" title=\"Text Bg\" condition=\"showText\" value=\"#4ea2e3\">\n\t\t<header>Controls</header>\n\t\t<input type=\"color\" title=\"Controls Color\" name=\"controlsColor\" value=\"#33363b\">\n\t\t<input type=\"color\" title=\"Controls Bg Color\" name=\"controlsBg\" value=\"#ffffff\">\n\t\t<header>Overlay</header>\n\t\t<input type=\"checkbox\" title=\"Overlay\" name=\"overlay\">\n\t\t<input type=\"color\" title=\"Overlay Color\" name=\"overlayColor\" value=\"#efefef\" condition=\"overlay\">\n\t\t<input type=\"range\" inline=\"\" title=\"Opacity\" name=\"overlayOpacity\" min=\"0\" max=\"1\" step=\"0.1\" value=\"0.5\" condition=\"overlay\">\n\t</mbr-parameters>\n\t<div class=\"mbr-overlay\" mbr-if=\"overlay\"></div>\n\t<amp-carousel width=\"450\" height=\"300\" layout=\"responsive\" type=\"slides\" loop=\"\" autoplay=\"2000\">\n\t\t<div class=\"item slider-image\">\n\t\t\t<div class=\"item-wrapper\">\n\t\t\t\t<amp-img lightbox=\"true\" src=\"@PROJECT_PATH@/assets/images/fomecs-cover.png\" layout=\"responsive\" width=\"463.6363636363636\" height=\"300\" alt=\"image\" class=\"placeholder-loader lb-image\">\n\t\t\t\t\t<div class=\"text-container\">\n\t\t\t\t\t\t<h4 mbr-text=\"\" class=\"mbr-fonts-style\" mbr-if=\"showTitle\" data-app-selector=\".mbr-section-title\" mbr-theme-style=\"display-1\">\n\t\t\t\t\t\t\tFull Screen Slider\n\t\t\t\t\t\t</h4>\n\t\t\t\t\t\t<p mbr-text=\"\" class=\"mbr-text mbr-fonts-style\" mbr-if=\"showText\" data-app-selector=\".mbr-text\" mbr-theme-style=\"display-2\">\n\t\t\t\t\t\t\tLorem ipsum dolor sit amet, consectetur adipiscing elit.\n\t\t\t\t\t\t</p>\n\t\t\t\t\t</div>\n\t\t\t\t\t<div placeholder=\"\" class=\"placeholder\"></div>\n\t\t\t\t\t<img class=\"mbr-temp\" src=\"@PROJECT_PATH@/assets/images/fomecs-cover.png\" alt=\"\" title=\"\" lightbox=\"true\">\n\t\t\t\t</amp-img>\n\t\t\t</div>\n\t\t</div>\n\t\t<div class=\"item slider-image\">\n\t\t\t<div class=\"item-wrapper\">\n\t\t\t\t<amp-img src=\"@PROJECT_PATH@/assets/images/slideshow-5-3806x1665.png\" layout=\"responsive\" width=\"685.7657657657658\" height=\"300\" alt=\"image\" class=\"placeholder-loader lb-image\" lightbox=\"true\">\n\t\t\t\t\t<div class=\"text-container\">\n\t\t\t\t\t\t<h4 mbr-text=\"\" class=\"mbr-fonts-style\" mbr-if=\"showTitle\" data-app-selector=\".mbr-section-title\" mbr-theme-style=\"display-1\">\n\t\t\t\t\t\t\tFull Screen Slider\n\t\t\t\t\t\t</h4>\n\t\t\t\t\t\t<p mbr-text=\"\" class=\"mbr-text mbr-fonts-style\" mbr-if=\"showText\" data-app-selector=\".mbr-text\" mbr-theme-style=\"display-2\">\n\t\t\t\t\t\t\tLorem ipsum dolor sit amet, consectetur adipiscing elit.\n\t\t\t\t\t\t</p>\n\t\t\t\t\t</div>\n\t\t\t\t\t<div placeholder=\"\" class=\"placeholder\"></div>\n\t\t\t\t\t<img class=\"mbr-temp\" src=\"@PROJECT_PATH@/assets/images/slideshow-5-3806x1665.png\" alt=\"\" title=\"\" lightbox=\"true\">\n\t\t\t\t</amp-img>\n\t\t\t</div>\n\t\t</div>\n\t\t<div class=\"item slider-image\">\n\t\t\t<div class=\"item-wrapper\">\n\t\t\t\t<amp-img lightbox=\"true\" src=\"@PROJECT_PATH@/assets/images/slideshow-10-3806x1665.png\" layout=\"responsive\" width=\"685.7657657657658\" height=\"300\" alt=\"image\" class=\"placeholder-loader lb-image\">\n\t\t\t\t\t<div class=\"text-container\">\n\t\t\t\t\t\t<h4 mbr-text=\"\" class=\"mbr-fonts-style\" mbr-if=\"showTitle\" data-app-selector=\".mbr-section-title\" mbr-theme-style=\"display-1\">\n\t\t\t\t\t\t\tFull Screen Slider\n\t\t\t\t\t\t</h4>\n\t\t\t\t\t\t<p mbr-text=\"\" class=\"mbr-text mbr-fonts-style\" mbr-if=\"showText\" data-app-selector=\".mbr-text\" mbr-theme-style=\"display-2\">\n\t\t\t\t\t\t\tLorem ipsum dolor sit amet, consectetur adipiscing elit.\n\t\t\t\t\t\t</p>\n\t\t\t\t\t</div>\n\t\t\t\t\t<div placeholder=\"\" class=\"placeholder\"></div>\n\t\t\t\t\t<img class=\"mbr-temp\" src=\"@PROJECT_PATH@/assets/images/slideshow-10-3806x1665.png\" alt=\"\" title=\"\" lightbox=\"true\">\n\t\t\t\t</amp-img>\n\t\t\t</div>\n\t\t</div>\n\t</amp-carousel>\n</section>",
-          "_JSplaceholders": [],
+          "_name": "header2",
+          "_customHTML": "<section class=\"header2 slider\" group=\"Headers\" plugins=\"amp-main,amp-carousel\">\n\t<mbr-parameters>\n\t<!-- Block parameters controls (Blue \"Gear\" panel) -->\n\t<input type=\"checkbox\" title=\"Show Title\" name=\"showTitle\">\n\t<input type=\"checkbox\" title=\"Show Subtitle\" name=\"showSubTitle\">\n\t<input type=\"checkbox\" title=\"Show Text\" name=\"showText\">\n\n\t<input type=\"checkbox\" title=\"Show Buttons\" name=\"showButtons\">\n\n\t<select title=\"Images\" name=\"imagesAmount\">\n\t\t<option value=\"2\">2</option>\n\t\t<option value=\"3\" selected=\"\">3</option>\n\t</select>\n\n\t<input type=\"checkbox\" title=\"Autoplay\" name=\"autoplay\" checked=\"\">\n\t\n\t<input type=\"range\" inline=\"\" title=\"Delay\" name=\"delay\" min=\"1000\" max=\"10000\" step=\"1000\" value=\"3000\" condition=\"autoplay\">\n\t<input type=\"checkbox\" title=\"Overlay\" name=\"overlay\" condition=\"bg.type!='color'\">\n\t<input type=\"color\" title=\"Overlay Color\" name=\"overlayColor\" value=\"#000000\" condition=\"bg.type!='color' &amp;&amp; overlay\">\n\t<input type=\"range\" inline=\"\" title=\"Overlay Opacity\" name=\"overlayOpacity\" min=\"0\" max=\"1\" step=\"0.1\" value=\"0.7\" condition=\"bg.type!='color' &amp;&amp; overlay\">\n\t<!-- End block parameters -->\n\t</mbr-parameters>\n\t<div class=\"slider-box\" data-autoplay=\"{{autoplay}}\" data-delay=\"{{delay}}\"><amp-carousel class=\"carousel\" height=\"3\" width=\"4\" layout=\"responsive\" type=\"slides\" on=\"slideChange:AMP.setState({selectedSlide: event.index})\" loop=\"\"><div class=\"image\">\n\t\t\t\t<amp-img class=\"carousel-img mobirise-loader\" src=\"@PROJECT_PATH@/assets/images/fomecs-cover-4.png\" layout=\"fill\" alt=\"Mobirise\" width=\"5.795454545454546\" height=\"3\">\n\t\t\t\t\t<div class=\"mbr-overlay\" mbr-if=\"overlay &amp;&amp; bg.type !== 'color'\"></div>\n\t\t\t\t\t<div class=\"container\">\n\t\t\t\t\t\t<h2 mbr-if=\"showTitle\" class=\"mbr-section-title align-center mbr-fonts-style mbr-bold mbr-white\" mbr-theme-style=\"display-1\">\n\t\t\t\t\t\tHeader Slider\n\t\t\t\t\t\t</h2>\n\t\t\t\t\t\t<h3 mbr-if=\"showSubTitle\" data-app-selector=\".mbr-section-subtitle\" class=\"mbr-section-subtitle align-center mbr-light mbr-fonts-style mbr-white\" mbr-theme-style=\"display-5\">\n\t\t\t\t\t\tLorem ipsum dolor sit amet, consectetur adipisicing elit.\n\t\t\t\t\t\t</h3>\n\t\t\t\t\t\t<p class=\"mbr-text align-center mbr-fonts-style mbr-white\" data-app-selector=\".mbr-text, .mbr-section-btn\" mbr-if=\"showText\" mbr-theme-style=\"display-7\">\n\t\t\t\t\t\t\tLorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae cupiditate rerum ipsum tempora vero. Fugit facilis possimus assumenda ipsa, sapiente eius sunt fuga saepe nemo. Necessitatibus consequuntur, recusandae consequatur suscipit.\n\t\t\t\t\t\t</p>\n\t\t\t\t\t\t<div class=\"mbr-section-btn align-center\" mbr-if=\"showButtons\" data-toolbar=\"-mbrBtnMove\" mbr-buttons=\"\" mbr-theme-style=\"display-4\">\n\t\t\t\t\t\t\t<a class=\"btn btn-primary btn-md\" href=\"https://mobirise.com\">VIEW MORE</a>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t</div>\n\t\t\t\t\t<div placeholder=\"\" class=\"placeholder\"></div>\n\t\t\t\t\t<img class=\"mbr-temp\" src=\"@PROJECT_PATH@/assets/images/fomecs-cover-4.png\" alt=\"Mobirise\" title=\"\">\n\t\t\t\t</amp-img>\n\t\t\t</div><div class=\"image\" mbr-class=\"{'super-hide': imagesAmount < 2}\">\n\t\t\t\t<amp-img class=\"carousel-img mobirise-loader\" src=\"@PROJECT_PATH@/assets/images/slideshow-5-3806x1665.png\" layout=\"fill\" alt=\"Mobirise\" width=\"6.857657657657658\" height=\"3\">\n\t\t\t\t\t<div class=\"mbr-overlay\" mbr-if=\"overlay &amp;&amp; bg.type !== 'color'\"></div>\n\t\t\t\t\t<div class=\"container\">\n\t\t\t\t\t\t<h2 mbr-if=\"showTitle\" class=\"mbr-section-title align-center mbr-fonts-style mbr-bold mbr-white\" mbr-theme-style=\"display-1\">\n\t\t\t\t\t\tHeader Slider\n\t\t\t\t\t\t</h2>\n\t\t\t\t\t\t<h3 mbr-if=\"showSubTitle\" data-app-selector=\".mbr-section-subtitle\" class=\"mbr-section-subtitle align-center mbr-light mbr-fonts-style mbr-white\" mbr-theme-style=\"display-5\">\n\t\t\t\t\t\tLorem ipsum dolor sit amet, consectetur adipisicing elit.\n\t\t\t\t\t\t</h3>\n\t\t\t\t\t\t<p class=\"mbr-text align-center mbr-fonts-style mbr-white\" data-app-selector=\".mbr-text, .mbr-section-btn\" mbr-if=\"showText\" mbr-theme-style=\"display-7\">\n\t\t\t\t\t\t\tLorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae cupiditate rerum ipsum tempora vero. Fugit facilis possimus assumenda ipsa, sapiente eius sunt fuga saepe nemo. Necessitatibus consequuntur, recusandae consequatur suscipit.\n\t\t\t\t\t\t</p>\n\t\t\t\t\t\t<div class=\"mbr-section-btn align-center\" mbr-if=\"showButtons\" data-toolbar=\"-mbrBtnMove\" mbr-buttons=\"\" mbr-theme-style=\"display-4\">\n\t\t\t\t\t\t\t<a class=\"btn btn-primary btn-md\" href=\"https://mobirise.com\">VIEW MORE</a>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t</div>\n\t\t\t\t\t<div placeholder=\"\" class=\"placeholder\"></div>\n\t\t\t\t\t<img class=\"mbr-temp\" src=\"@PROJECT_PATH@/assets/images/slideshow-5-3806x1665.png\" alt=\"Mobirise\" title=\"\">\n\t\t\t\t</amp-img>\n\t\t\t</div><div class=\"image\" mbr-class=\"{'super-hide': imagesAmount < 3}\">\n\t\t\t\t<amp-img class=\"carousel-img mobirise-loader\" src=\"@PROJECT_PATH@/assets/images/slideshow-10-3806x1665.png\" layout=\"fill\" alt=\"Mobirise\" width=\"6.857657657657658\" height=\"3\">\n\t\t\t\t\t<div class=\"mbr-overlay\" mbr-if=\"overlay &amp;&amp; bg.type !== 'color'\"></div>\n\t\t\t\t\t<div class=\"container\">\n\t\t\t\t\t\t<h2 mbr-if=\"showTitle\" class=\"mbr-section-title align-center mbr-fonts-style mbr-bold mbr-white\" mbr-theme-style=\"display-1\">\n\t\t\t\t\t\tHeader Slider\n\t\t\t\t\t\t</h2>\n\t\t\t\t\t\t<h3 mbr-if=\"showSubTitle\" data-app-selector=\".mbr-section-subtitle\" class=\"mbr-section-subtitle align-center mbr-light mbr-fonts-style mbr-white\" mbr-theme-style=\"display-5\">\n\t\t\t\t\t\tLorem ipsum dolor sit amet, consectetur adipisicing elit.\n\t\t\t\t\t\t</h3>\n\t\t\t\t\t\t<p class=\"mbr-text align-center mbr-fonts-style mbr-white\" data-app-selector=\".mbr-text, .mbr-section-btn\" mbr-if=\"showText\" mbr-theme-style=\"display-7\">\n\t\t\t\t\t\t\tLorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae cupiditate rerum ipsum tempora vero. Fugit facilis possimus assumenda ipsa, sapiente eius sunt fuga saepe nemo. Necessitatibus consequuntur, recusandae consequatur suscipit.\n\t\t\t\t\t\t</p>\n\t\t\t\t\t\t<div class=\"mbr-section-btn align-center\" mbr-if=\"showButtons\" data-toolbar=\"-mbrBtnMove\" mbr-buttons=\"\" mbr-theme-style=\"display-4\">\n\t\t\t\t\t\t\t<a class=\"btn btn-primary btn-md\" href=\"https://mobirise.com\">VIEW MORE</a>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t</div>\n\t\t\t\t\t<div placeholder=\"\" class=\"placeholder\"></div>\n\t\t\t\t\t<img class=\"mbr-temp\" src=\"@PROJECT_PATH@/assets/images/slideshow-10-3806x1665.png\" alt=\"Mobirise\" title=\"\">\n\t\t\t\t</amp-img>\n\t\t\t</div></amp-carousel>\n\t\t\n\t</div>\n</section>",
+          "_cid": "rRF80FrAb5",
+          "_anchor": "header2-7n",
           "_PHPplaceholders": [],
-          "_anchor": "slider1-4q",
-          "_isUserblock": true,
-          "_sourceTheme": "interioramp",
-          "_cid": "rPGcC4GcXg",
+          "_JSplaceholders": [],
           "_protectedParams": [],
           "_global": false,
           "_once": false,
